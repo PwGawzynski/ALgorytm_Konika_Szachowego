@@ -63,6 +63,7 @@ int main(int argc, char* argv[])
 		bool get_event = al_wait_for_event_until(event_queue, &event, &timeout);
 
 		// Handle the event
+
 		if (get_event) {
 			switch (event.type) {
 			case ALLEGRO_EVENT_TIMER:
