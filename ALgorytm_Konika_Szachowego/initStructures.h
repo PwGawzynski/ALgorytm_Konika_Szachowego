@@ -107,7 +107,7 @@ bool solve_knight_problem(pp_chessboard chessBoard, int* position_x, int* positi
 	/* Sort and try each one. */
 	qsort(&valids[0][0], 8, 3 * sizeof(int), &compar);
 	for (i = 0; i < 8; i++)
-		if (valid((&valids[i][1]), (&valids[i][2]), chessBoard, (size_x), (size_y)) && solve_knight_problem(chessBoard, (&valids[i][1]),(& valids[i][2]), (size_x), (size_y), (*current+=1)?current:0 ))
+		if (valid((&valids[i][1]), (&valids[i][2]), chessBoard, (size_x), (size_y)) && solve_knight_problem(chessBoard, (&valids[i][1]),(&valids[i][2]), (size_x), (size_y), (*current+=1)?current:0 ))
 			return 1;
 
 	/* Dead end: back off. */
