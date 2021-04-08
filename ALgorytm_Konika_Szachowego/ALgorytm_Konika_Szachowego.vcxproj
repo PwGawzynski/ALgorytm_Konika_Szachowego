@@ -26,7 +26,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="allegro_handler.h" />
-    <ClInclude Include="initStructures.h" />
+    <ClInclude Include="init_Structures.h" />
+    <ClInclude Include="solve_problem.h" />
+    <ClInclude Include="status.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
