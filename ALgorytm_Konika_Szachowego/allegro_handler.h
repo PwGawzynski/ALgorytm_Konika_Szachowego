@@ -4,6 +4,7 @@
 #include <allegro5/allegro_primitives.h>
 #include <allegro5/mouse.h>
 #include <allegro5/allegro_image.h>
+#include <allegro5/allegro_ttf.h>
 
 /// <summary>
 /// THIS FUNCTION INICIALIZES ALLEGRO LIB AND POINTERS
@@ -33,6 +34,9 @@ void allegro_game_init(ALLEGRO_TIMER** timer, ALLEGRO_DISPLAY** display, ALLEGRO
     *bg = al_load_bitmap("MENU.jpg");
     must_init(*bg, "bg_pointer");
 
+    al_init_font_addon();              
+    al_init_ttf_addon();
+	
     //----DISPLAY SETTINGS----//
     al_set_window_position(*display, 0, 0);
     al_set_window_title(*display, "THE KNIGHT'S TOUR PROBLEM");

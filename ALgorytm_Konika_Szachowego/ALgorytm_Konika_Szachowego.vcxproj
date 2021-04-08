@@ -26,6 +26,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="allegro_handler.h" />
+    <ClInclude Include="allegro_start_menu.h" />
     <ClInclude Include="init_Structures.h" />
     <ClInclude Include="solve_problem.h" />
     <ClInclude Include="status.h" />

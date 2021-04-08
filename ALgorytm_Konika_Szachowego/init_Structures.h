@@ -31,21 +31,13 @@ pp_chessboard init_chessBoard(int* size_x, int* size_y) {
 		m_chessBoard[i] = alocate_for_one(size_x);
 	}
 	init_by_0(m_chessBoard, size_x, size_y);
-	print_board(m_chessBoard, size_x, size_y);
+	//print_board(m_chessBoard, size_x, size_y);
 	return m_chessBoard;
 
 }
 
-pp_chessboard getdata(int* size_x, int* size_y, int* position_x, int* position_y) {
-	printf(" Podaj rozmiar szachownicy X : \n");
-	scanf("%d", size_x);
-	printf(" Podaj rozmiar szachownicy Y : \n");
-	scanf("%d", size_y);
-	system("cls");
-	printf(" Podaj pozycje poczatkowa skoczka X : \n");
-	scanf("%d", position_x);
-	printf(" Podaj pozycje poczatkowa skoczka Y : \n");
-	scanf("%d", position_y);
-	system("cls");
+pp_chessboard getdata(int* size_x, int* size_y) {
+
 	return init_chessBoard(size_x, size_y);
 }
+
