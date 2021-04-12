@@ -58,7 +58,7 @@ bool listener(ALLEGRO_TIMER** timer, ALLEGRO_DISPLAY** display, ALLEGRO_EVENT_QU
 					*resolution_x/2,font_position_y[iterator],
 					ALLEGRO_ALIGN_CENTER, al_cstr(input));
 				al_flip_display();
-				printf("%d", iterator);
+				//printf("%d", iterator);
 				if(iterator<=3)values[iterator] = atoi(al_cstr(input));
 				input = al_ustr_new("");
 				iterator++;
