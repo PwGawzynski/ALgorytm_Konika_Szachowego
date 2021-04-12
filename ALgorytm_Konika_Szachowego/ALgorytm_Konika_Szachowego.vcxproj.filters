@@ -26,7 +26,19 @@
     <ClInclude Include="allegro_handler.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="initStructures.h">
+    <ClInclude Include="init_Structures.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="solve_problem.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="status.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="allegro_start_menu.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="draw_solution.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
