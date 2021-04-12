@@ -38,5 +38,8 @@
     <ClInclude Include="allegro_start_menu.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="draw_solution.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

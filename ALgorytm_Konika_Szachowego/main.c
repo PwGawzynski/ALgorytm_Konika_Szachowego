@@ -3,7 +3,7 @@
 #include "solve_problem.h"
 #include "allegro_handler.h"
 #include "allegro_start_menu.h"
-
+#include "draw_solution.h"
 
 // ____CONSTANTS____ //
 const float FPS = 30.0;
@@ -30,7 +30,8 @@ int main() {
 	}
 	else printf("Inpossible");
 
-
+	draw_solution(&timer, &display, &queue, &font, &background,
+		&resolution_x, &resolution_y, &FPS, &size_x, &size_y, &position_x, &position_y,chessBoard);
 
 	al_destroy_font(font);
 	al_destroy_display(display);
