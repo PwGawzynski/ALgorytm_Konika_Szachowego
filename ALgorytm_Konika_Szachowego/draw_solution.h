@@ -29,14 +29,14 @@
 				if (iter_j % 2 == 0)
 				{
 					al_draw_filled_rectangle(i, j, i + one_ractangle_x, j + one_ractangle_y,
-						al_map_rgb(255, 255, 255));
-					al_draw_text(*font, al_map_rgb(0, 0, 0),
+						al_map_rgb(222, 189, 146));
+					al_draw_text(*font, al_map_rgb(0, 0, 0), 
 						ractangle_font_x , ractangle_font_y-30 , ALLEGRO_ALIGN_CENTER, alfanumerical_int);
 				}
 				else
 				{
 					al_draw_filled_rectangle(i, j, i + one_ractangle_x, j + one_ractangle_y,
-						al_map_rgb(0, 0, 0));
+						al_map_rgb(106, 75, 53));
 					al_draw_text(*font, al_map_rgb(255, 255, 255),
 						ractangle_font_x , ractangle_font_y-30 , ALLEGRO_ALIGN_CENTER, alfanumerical_int);
 				}
@@ -45,15 +45,15 @@
 				if (iter_j % 2 == 0)
 				{
 					al_draw_filled_rectangle(i, j, i + one_ractangle_x, j + one_ractangle_y,
-						al_map_rgb(0, 0, 0));
+						al_map_rgb(106, 75, 53));
 					al_draw_text(*font, al_map_rgb(255, 255, 255),
 						ractangle_font_x , ractangle_font_y-30 ,ALLEGRO_ALIGN_CENTER, alfanumerical_int);
 				}
 				else
 				{
 					al_draw_filled_rectangle(i, j, i + one_ractangle_x, j + one_ractangle_y,
-						al_map_rgb(255, 255, 255));
-					al_draw_text(*font, al_map_rgb(0, 0, 0),
+						al_map_rgb(222, 189, 146));
+					al_draw_text(*font, al_map_rgb(0, 0, 0), 
 						ractangle_font_x , ractangle_font_y-30 , ALLEGRO_ALIGN_CENTER, alfanumerical_int);
 				}
 			}
@@ -64,5 +64,18 @@
 		iter_j = 0;
 	}
 	al_flip_display();
-	al_rest(25);
+	ALLEGRO_EVENT event;
+	bool done=false;
+	while(1)
+	{
+		al_wait_for_event(*queue, &event);
+		switch (event.type)
+		{
+		case ALLEGRO_EVENT_DISPLAY_CLOSE:
+			done = true;
+			break;
+		default: break;
+		}
+		if(done)break;
+	}
 }

@@ -20,6 +20,7 @@ bool can_i(int* values)
 	{
 		if (values[i] > 12) return false;
 	}
+	if (values[0] != values[1])return false;
 	for (; i < 5; i++)
 	{
 		if (values[i] > 11) return false;

@@ -6,7 +6,7 @@ int moves[8][2] = {
 
 int check(int x, int y, pp_chessboard chessBoard, int* size_x, int* size_y) 
 {
-	return
+	return 
 	(x) >= 0 && (x) < (*size_y) && 
 	(y) >= 0 && (y) < (*size_x) &&
 	chessBoard[(y)][(x)] == 0; 
