@@ -14,7 +14,8 @@
 /// <param name="queue">POINTER TO QUEUE</param>
 /// <param name="font">POINTER TO FONT</param>
 /// <param name="resolution_x">RESOLUTION OF DISPLAY</param>
-void allegro_game_init(ALLEGRO_TIMER** timer, ALLEGRO_DISPLAY** display, ALLEGRO_EVENT_QUEUE** queue, ALLEGRO_FONT** font, ALLEGRO_BITMAP** bg, unsigned int* resolution_x, unsigned int* resolution_y, float* FPS) {
+void allegro_game_init(ALLEGRO_TIMER** timer, ALLEGRO_DISPLAY** display, ALLEGRO_EVENT_QUEUE** queue, ALLEGRO_FONT** font, 
+    ALLEGRO_BITMAP** bg, unsigned int* resolution_x, unsigned int* resolution_y, float* FPS) {
     //----Allegro & addons init----//
     must_init(al_init(), "allegro");
     must_init(al_install_keyboard(), "keyboard");

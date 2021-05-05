@@ -39,14 +39,14 @@ bool solve_knight_problem(pp_chessboard chessBoard, int* position_x, int* positi
 			}
 		}
 	}
-		qsort(&step[0][0], 8, 3 * sizeof(int), &compare);
-		for (i = 0; i < 8; i++)
-		{
-			if (check(step[i][1], step[i][2], chessBoard, (size_x), (size_y)) && 
-				solve_knight_problem(chessBoard, (&step[i][1]), (&step[i][2]), 
-						(size_x), (size_y), (*current += 1) ? current : 0))
-			return 1;
-		}
+	qsort(&step[0][0], 8, 3 * sizeof(int), &compare);
+	for (i = 0; i < 8; i++)
+	{
+		if (check(step[i][1], step[i][2], chessBoard, (size_x), (size_y)) && 
+			solve_knight_problem(chessBoard, (&step[i][1]), (&step[i][2]), 
+					(size_x), (size_y), (*current += 1) ? current : 0))
+		return 1;
+	}
 	chessBoard[(*position_y)][(*position_x)] = 0;
 	return 0;
 }

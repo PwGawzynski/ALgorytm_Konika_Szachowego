@@ -13,6 +13,20 @@ bool check_event_click(unsigned int* mouse_x, unsigned int* mouse_y, int *values
 	}
 }
 
+bool can_i(int* values)
+{
+	int i = 0;
+	for(;i<2;i++)
+	{
+		if (values[i] > 12) return false;
+	}
+	for (; i < 5; i++)
+	{
+		if (values[i] > 11) return false;
+	}
+	return true;
+}
+
 bool listener(ALLEGRO_TIMER** timer, ALLEGRO_DISPLAY** display, ALLEGRO_EVENT_QUEUE** queue, 
 	ALLEGRO_BITMAP** bg, ALLEGRO_FONT** font, unsigned int* resolution_x, 
 	unsigned int* resolution_y, const float* FPS,
@@ -37,7 +51,7 @@ bool listener(ALLEGRO_TIMER** timer, ALLEGRO_DISPLAY** display, ALLEGRO_EVENT_QU
 		case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
 			mouse_x = event.mouse.x;
 			mouse_y = event.mouse.y;
-			if (iterator == 4) 
+			if (iterator == 4 && can_i(values)) 
 			{
 				return check_event_click(&mouse_x, &mouse_y, values, 
 					size_x, size_y, position_x, position_y);	
@@ -52,13 +66,11 @@ bool listener(ALLEGRO_TIMER** timer, ALLEGRO_DISPLAY** display, ALLEGRO_EVENT_QU
 			}
 			else if (event.keyboard.keycode == ALLEGRO_KEY_ENTER)
 			{
-
-				//printf("%s", al_cstr(input));
+				
 				al_draw_text(font_menu,color,
 					*resolution_x/2,font_position_y[iterator],
 					ALLEGRO_ALIGN_CENTER, al_cstr(input));
 				al_flip_display();
-				//printf("%d", iterator);
 				if(iterator<=3)values[iterator] = atoi(al_cstr(input));
 				input = al_ustr_new("");
 				iterator++;
