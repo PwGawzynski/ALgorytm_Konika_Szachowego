@@ -8,6 +8,9 @@
 
 bool must_init(bool test,const char* description) {
 	if (test) { return true; }
-	printf("Cannot inicialize or value fault \n DESCRIPTION: %s",  description);
-	exit(1);
+	else {
+		printf("Cannot inicialize or value fault \n DESCRIPTION: %s", description);
+		system("pause");
+		exit(1);
+	}
 }
