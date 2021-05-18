@@ -6,6 +6,14 @@
 #include <stdbool.h>
 #endif // DEBUG
 
+/**
+ * \brief Funkcja sprawdza czy wartość "test" została zainicjalizowana. 
+ *
+ * \param[in] description opis.
+ * \param[in] test wartość do sprawdzenia.
+ * \return Zwraca true jeżeli dana wartość działa poprawnie.
+ */
+
 bool must_init(bool test,const char* description) {
 	if (test) { return true; }
 	else {

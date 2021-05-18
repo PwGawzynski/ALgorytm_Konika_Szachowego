@@ -1,9 +1,18 @@
-﻿/* Possible moves */
+﻿/* Możliwe ruchy */
 int moves[8][2] = {
  { -2, 1 }, { -1, 2 }, { 1, 2 }, { 2, 1 },
  { 2, -1 }, { 1, -2 }, { -1, -2 }, { -2, -1 }
 };
 
+/**
+ * \brief Funckja sprawdza czy dany skok nie wychodzi poza rozmiar tablicy i czy pozycja na którą ma wykonać skok jest wolna.
+ *
+ * \param[in] x poziomy koordynat skoku.
+ * \param[in] y pionowy koordynat skoku.
+ * \param[in] size_x wymiar poziomy szachownicy.
+ * \param[in] size_y wymiar pionowy szachownicy.
+ * \return Zwraca wartość różną od zera gdy dany skok jest możliwy do wykonania.
+ */
 int check(int x, int y, pp_chessboard chessBoard, int* size_x, int* size_y) 
 {
 	return 
@@ -12,12 +21,29 @@ int check(int x, int y, pp_chessboard chessBoard, int* size_x, int* size_y)
 	chessBoard[(y)][(x)] == 0; 
 }
 
-int compare(const void* a, const void* b)
+/**
+ * \brief Standardowa funckja porównująca dla funkcji quick sort.
+ * 
+ * \param[in] a pierwszy element do porównania.
+ * \param[in] b drugi element do porównania.
+ * \return Zwraca wartość po porównaniu.
+ */
+ int compare(const void* a, const void* b)
 {
 	return ((int*)a)[0] - ((int*)b)[0];
 }
 
-/* Solve problem*/
+/**
+ * \brief Funkcja rozwiązuje problem skoczka szachowego.
+ *
+ * \param[in] chessBoard macierz odwzorująca szachownicę.
+ * \param[in] position_x aktualny koordynat x skoczka.
+ * \param[in] position_y aktualny koordynat y skoczka.
+ * \param[in] size_x wymiar poziomy szachownicy.
+ * \param[in] size_y wymiar pionowy szachownicy.
+ * \param[in] current licznik wykonanych skoków.
+ * \return Zwraca 1 jeżeli udało się rozwiązać problem, a 0 gdy się nie udało.
+ */
 bool solve_knight_problem(pp_chessboard chessBoard, int* position_x, int* position_y, int* size_x, int* size_y, int* current)
 {
 	chessBoard[(*position_y)][(*position_x)] = (*current);

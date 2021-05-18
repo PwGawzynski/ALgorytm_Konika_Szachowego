@@ -1,5 +1,15 @@
-
-
+/**
+ * \brief Funckja sprawdza czy zosta³ klikniêty przycisk rozwi¹zania problemu.
+ *
+ * \param[in] mouse_x poziomy koordynat kursora.
+ * \param[in] mouse_y pionowy koordynat kursora.
+ * \param[in] values tablica zawieraj¹ca koordynaty pocz¹tkowe skoczka oraz wymiary szachownicy.
+ * \param[in] size_x rozmiar poziomy szachownicy.
+ * \param[in] size_y rozmiar pionowy szachownicy.
+ * \param[in] position_x koordynat poziomy pocz¹tkowej pozycji skoczka.
+ * \param[in] position_y koordynat pionowy pocz¹tkowej pozycji skoczka.
+ * \return Zwraca true je¿eli zosta³ klikniêty w³aœciwy obszar.
+ */
 bool check_event_click(unsigned int* mouse_x, unsigned int* mouse_y, int *values, 
 	int* size_x, int* size_y, int* position_x, int* position_y)
 {
@@ -12,13 +22,19 @@ bool check_event_click(unsigned int* mouse_x, unsigned int* mouse_y, int *values
 		return true;
 	}
 }
-
+/**
+ * \brief Funkcja uniemo¿liwia omy³kowe rozwi¹zanie problemu.
+ *
+ * \param[in] values tablica zawieraj¹ca koordynaty pocz¹tkowe skoczka oraz wymiary szachownicy.
+ * \return Zwraca true je¿eli wprowadzone wartoœci s¹ prawid³owe.
+ */ 
 bool can_i(int* values)
 {
 	int i = 0;
 	for(;i<2;i++)
 	{
 		if (values[i] > 12) return false;
+		if (values[i] < 1) return false;
 	}
 	if (values[0] != values[1])return false;
 	for (; i < 5; i++)
@@ -27,7 +43,16 @@ bool can_i(int* values)
 	}
 	return true;
 }
-
+/**
+ * \brief Funkcja zawiera g³ówn¹ pêtle bilbioteki allegro oraz obs³uguje eventy kolejki.
+ *
+ * \param[in] resolution_x rozdzielczoœæ pozioma okna programu.
+ * \param[in] resolution_y rozdzielczoœæ pionowa okna programu.
+ * \param[in] size_x rozmiar poziomy szachownicy.
+ * \param[in] size_y rozmiar pionowy szachownicy.
+ * \param[in] position_x koordynat poziomy pocz¹tkowej pozycji skoczka.
+ * \param[in] position_y koordynat pionowy pocz¹tkowej pozycji skoczka.
+ */
 bool listener(ALLEGRO_TIMER** timer, ALLEGRO_DISPLAY** display, ALLEGRO_EVENT_QUEUE** queue, 
 	ALLEGRO_BITMAP** bg, ALLEGRO_FONT** font, unsigned int* resolution_x, 
 	unsigned int* resolution_y, const float* FPS,
@@ -72,7 +97,7 @@ bool listener(ALLEGRO_TIMER** timer, ALLEGRO_DISPLAY** display, ALLEGRO_EVENT_QU
 					*resolution_x/2,font_position_y[iterator],
 					ALLEGRO_ALIGN_CENTER, al_cstr(input));
 				al_flip_display();
-				if(iterator<=3)values[iterator] = atoi(al_cstr(input));
+				if(iterator<=3) values[iterator] = atoi(al_cstr(input));
 				input = al_ustr_new("");
 				iterator++;
 				if(iterator==5)
@@ -94,12 +119,21 @@ bool listener(ALLEGRO_TIMER** timer, ALLEGRO_DISPLAY** display, ALLEGRO_EVENT_QU
 	al_destroy_font(font_menu);
 }
 
+/**
+ * \brief Funkcja inicjalizuje menu g³ówne programu.
+ *
+ * \param[in] resolution_x rozdzielczoœæ pozioma okna programu.
+ * \param[in] resolution_y rozdzielczoœæ pionowa okna programu.
+ * \param[in] size_x rozmiar poziomy szachownicy.
+ * \param[in] size_y rozmiar pionowy szachownicy.
+ * \param[in] position_x koordynat poziomy pocz¹tkowej pozycji skoczka.
+ * \param[in] position_y koordynat pionowy pocz¹tkowej pozycji skoczka.
+ */
 
-
-bool init_menu(ALLEGRO_TIMER** timer, ALLEGRO_DISPLAY** display, 
+void init_menu(ALLEGRO_TIMER** timer, ALLEGRO_DISPLAY** display, 
 	ALLEGRO_EVENT_QUEUE** queue, ALLEGRO_FONT** font, ALLEGRO_BITMAP** bg, 
 	unsigned int* resolution_x, unsigned int* resolution_y, const float* FPS,
-	int *size_x,int*size_y,int* position_x,int* position_y)
+	int* size_x, int* size_y, int* position_x, int* position_y)
 {
 	al_draw_bitmap(*bg, 0, 0, 0);
 	al_flip_display();
