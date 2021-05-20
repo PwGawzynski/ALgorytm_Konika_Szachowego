@@ -7,11 +7,12 @@ int moves[8][2] = {
 /**
  * \brief Funckja sprawdza czy dany skok nie wychodzi poza rozmiar tablicy i czy pozycja na którą ma wykonać skok jest wolna.
  *
- * \param[in] x poziomy koordynat skoku.
- * \param[in] y pionowy koordynat skoku.
- * \param[in] size_x wymiar poziomy szachownicy.
- * \param[in] size_y wymiar pionowy szachownicy.
- * \return Zwraca wartość różną od zera gdy dany skok jest możliwy do wykonania.
+ * \@param x poziomy koordynat skoku.
+ * \@param y pionowy koordynat skoku.
+ * \@param size_x wymiar poziomy szachownicy.
+ * \@param size_y wymiar pionowy szachownicy.
+ * \@param chessboard podwójny wskaźnik na macierz.
+ * \return  wartość różną od zera gdy dany skok jest możliwy do wykonania.
  */
 int check(int x, int y, pp_chessboard chessBoard, int* size_x, int* size_y) 
 {
@@ -24,8 +25,8 @@ int check(int x, int y, pp_chessboard chessBoard, int* size_x, int* size_y)
 /**
  * \brief Standardowa funckja porównująca dla funkcji quick sort.
  * 
- * \param[in] a pierwszy element do porównania.
- * \param[in] b drugi element do porównania.
+ * \@param a pierwszy element do porównania.
+ * \@param b drugi element do porównania.
  * \return Zwraca wartość po porównaniu.
  */
  int compare(const void* a, const void* b)
@@ -36,13 +37,17 @@ int check(int x, int y, pp_chessboard chessBoard, int* size_x, int* size_y)
 /**
  * \brief Funkcja rozwiązuje problem skoczka szachowego.
  *
- * \param[in] chessBoard macierz odwzorująca szachownicę.
- * \param[in] position_x aktualny koordynat x skoczka.
- * \param[in] position_y aktualny koordynat y skoczka.
- * \param[in] size_x wymiar poziomy szachownicy.
- * \param[in] size_y wymiar pionowy szachownicy.
- * \param[in] current licznik wykonanych skoków.
- * \return Zwraca 1 jeżeli udało się rozwiązać problem, a 0 gdy się nie udało.
+ *	Tutaj następuje rozwiązywanie problemu funkcja wywołuje się rekurencyjnie sprawdzając za każdym razem czy
+ *	skok i skok który który prawdopodobnie z niego następuje ma najmniej możliwości wywołań rekuręcyjnych.
+ *	
+ * \@param chessBoard macierz odwzorująca szachownicę.
+ * \@param position_x aktualny koordynat x skoczka.
+ * \@param position_y aktualny koordynat y skoczka.
+ * \@param size_x wymiar poziomy szachownicy.
+ * \@param size_y wymiar pionowy szachownicy.
+ * \@param current licznik wykonanych skoków.
+ * \@param chessboard podwójny wskaźnik na macierz.
+ * \return  1 jeżeli udało się rozwiązać problem, a 0 gdy się nie udało.
  */
 bool solve_knight_problem(pp_chessboard chessBoard, int* position_x, int* position_y, int* size_x, int* size_y, int* current)
 {

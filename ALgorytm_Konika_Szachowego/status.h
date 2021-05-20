@@ -9,9 +9,11 @@
 /**
  * \brief Funkcja sprawdza czy wartość "test" została zainicjalizowana. 
  *
- * \param[in] description opis.
- * \param[in] test wartość do sprawdzenia.
- * \return Zwraca true jeżeli dana wartość działa poprawnie.
+ *	Ta funkcja sprawdza czy wartość która będzie użyta została poprawnie zainicjalizowana.
+ *	
+ * \@param description opis.
+ * \@param test wartość do sprawdzenia.
+ * \return  true jeżeli dana wartość działa poprawnie.
  * 
  */
 

@@ -8,9 +8,20 @@
 /**
  * \brief Funcja inicjalizuje niezbêdne wskaŸniki i elementy biblioteki allegro.
  *
- * \param[in] resolution_x rozdzielczoœæ pozioma okna programu.
- * \param[in] resolution_y rozdzielczoœæ pionowa okna programu. 
- * \param[in] FPS iloœæ klatek na sekundê.
+ *  W tej funkcji nastêpuje kolejno, inicjalizacja addon allegro, nastêpnie inicjalizowane s¹ wskaŸniki,
+ *  nastêpnie  ustawiane s¹ w³aœciwoœci okna wyswietlacza, ustwiane s¹ w³asnoœci grafiki, i kolejki eventów.
+ *
+ * \@param resolution_x rozdzielczoœæ pozioma okna programu.
+ * \@param resolution_y rozdzielczoœæ pionowa okna programu. 
+ * \@param FPS iloœæ klatek na sekundê.
+* \@param timer podwójny wskaŸnik na timer biblioteki allegro.
+ * \@param display podwójny wskaŸnik na display biblioteki allegro.
+ * \@param queue podwójny wskaŸnik na kolejkê biblioteki allegro.
+ * \@param bg podwójny wskaŸnik na t³o biblioteki allegro.
+ * \@param font podwójny wskaŸnik na font biblioteki allegro.
+ * \@param resolution_x  wskaŸnik na szerokoœæ ekranu.
+ * \@param resolution_y  wskaŸnik na wysokoœæ ekranu.
+ *
  */
 void allegro_game_init(ALLEGRO_TIMER** timer, ALLEGRO_DISPLAY** display, ALLEGRO_EVENT_QUEUE** queue, ALLEGRO_FONT** font, 
     ALLEGRO_BITMAP** bg, unsigned int* resolution_x, unsigned int* resolution_y, float* FPS) {

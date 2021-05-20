@@ -1,6 +1,9 @@
 /**
  * \brief Funckja sprawdza czy zosta³ klikniêty przycisk rozwi¹zania problemu.
  *
+ *	Ta funkcja sprawdza tak naprawdê pozycjê myszki i na tej podstawie zwraca true je¿eli
+ *	klikniêcie nast¹pi³o w odpowiednim miejscu.
+ *
  * \param[in] mouse_x poziomy koordynat kursora.
  * \param[in] mouse_y pionowy koordynat kursora.
  * \param[in] values tablica zawieraj¹ca koordynaty pocz¹tkowe skoczka oraz wymiary szachownicy.
@@ -25,6 +28,8 @@ bool check_event_click(unsigned int* mouse_x, unsigned int* mouse_y, int *values
 /**
  * \brief Funkcja uniemo¿liwia omy³kowe rozwi¹zanie problemu.
  *
+ *	Ta funkcja sprawdza podane przez urzytkownika wartoœci aby nie zosta³y wprowadzone niew³aœciwe.
+ *	
  * \param[in] values tablica zawieraj¹ca koordynaty pocz¹tkowe skoczka oraz wymiary szachownicy.
  * \return Zwraca true je¿eli wprowadzone wartoœci s¹ prawid³owe.
  */ 
@@ -46,12 +51,21 @@ bool can_i(int* values)
 /**
  * \brief Funkcja zawiera g³ówn¹ pêtle bilbioteki allegro oraz obs³uguje eventy kolejki.
  *
- * \param[in] resolution_x rozdzielczoœæ pozioma okna programu.
- * \param[in] resolution_y rozdzielczoœæ pionowa okna programu.
- * \param[in] size_x rozmiar poziomy szachownicy.
- * \param[in] size_y rozmiar pionowy szachownicy.
- * \param[in] position_x koordynat poziomy pocz¹tkowej pozycji skoczka.
- * \param[in] position_y koordynat pionowy pocz¹tkowej pozycji skoczka.
+ *	Tutaj odbywa siê g³owna pentla, która sprawdza pozycje myszki, klikniêcia, eventy przycisków i wyjœæia.
+ *
+ * \@param resolution_x rozdzielczoœæ pozioma okna programu.
+ * \@param resolution_y rozdzielczoœæ pionowa okna programu.
+ * \@param size_x rozmiar poziomy szachownicy.
+ * \@param size_y rozmiar pionowy szachownicy.
+ * \@param position_x koordynat poziomy pocz¹tkowej pozycji skoczka.
+ * \@param position_y koordynat pionowy pocz¹tkowej pozycji skoczka.
+ * \@param timer podwójny wskaŸnik na timer biblioteki allegro.
+ * \@param display podwójny wskaŸnik na timer biblioteki allegro.
+ * \@param timer podwójny wskaŸnik na timer biblioteki allegro.
+ * \@param font podwójny wskaŸnik na timer biblioteki allegro.
+ * \@param timer podwójny wskaŸnik na timer biblioteki allegro.
+ * \@param resolution_x podwójny wskaŸnik na timer biblioteki allegro.
+ * \@param resolution_y podwójny wskaŸnik na timer biblioteki allegro.
  */
 bool listener(ALLEGRO_TIMER** timer, ALLEGRO_DISPLAY** display, ALLEGRO_EVENT_QUEUE** queue, 
 	ALLEGRO_BITMAP** bg, ALLEGRO_FONT** font, unsigned int* resolution_x, 
@@ -122,12 +136,20 @@ bool listener(ALLEGRO_TIMER** timer, ALLEGRO_DISPLAY** display, ALLEGRO_EVENT_QU
 /**
  * \brief Funkcja inicjalizuje menu g³ówne programu.
  *
- * \param[in] resolution_x rozdzielczoœæ pozioma okna programu.
- * \param[in] resolution_y rozdzielczoœæ pionowa okna programu.
- * \param[in] size_x rozmiar poziomy szachownicy.
- * \param[in] size_y rozmiar pionowy szachownicy.
- * \param[in] position_x koordynat poziomy pocz¹tkowej pozycji skoczka.
- * \param[in] position_y koordynat pionowy pocz¹tkowej pozycji skoczka.
+ *	Ta funkcja odpowiada za przekazanie sterowania na listener
+ *
+ * \@param resolution_x rozdzielczoœæ pozioma okna programu.
+ * \@param resolution_y rozdzielczoœæ pionowa okna programu.
+ * \@param size_x rozmiar poziomy szachownicy.
+ * \@param size_y rozmiar pionowy szachownicy.
+ * \@param position_x koordynat poziomy pocz¹tkowej pozycji skoczka.
+ * \@param position_y koordynat pionowy pocz¹tkowej pozycji skoczka.
+* \@param timer podwójny wskaŸnik na timer biblioteki allegro.
+ * \@param display podwójny wskaŸnik na display biblioteki allegro.
+ * \@param queue podwójny wskaŸnik na kolejkê biblioteki allegro.
+ * \@param bg podwójny wskaŸnik na t³o biblioteki allegro.
+ * \@param font podwójny wskaŸnik na font biblioteki allegro.
+
  */
 
 void init_menu(ALLEGRO_TIMER** timer, ALLEGRO_DISPLAY** display, 

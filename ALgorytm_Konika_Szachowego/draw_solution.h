@@ -1,15 +1,25 @@
 ﻿/**
  * \brief Funckja odwzorująca macierz szachownicy na wersję graficzną.
- *
- * \param[in] resolution_x rozdzielczość pozioma okna programu.
- * \param[in] resolution_y rozdzielczość pionowa okna programu.
- * \param[in] FPS ilość klatek na sekundę.
- * \param[in] chessBoard macierz odwzorująca szachownicę.
- * \param[in] size_x rozmiar poziomy szachownicy.
- * \param[in] size_y rozmiar pionowy szachownicy.
- * \param[in] position_x koordynat poziomy początkowej pozycji skoczka.
- * \param[in] position_y koordynat pionowy początkowej pozycji skoczka.
- * \param[in] impossible sprawdza czy można rozwiązać problem.
+ * 
+ *	Ta funkcja kożystając z podwójnej pętli for odwzorowuje macierza szachownicy i rysuje kwadraty.
+ *	Następnie w pętli while czeka na zamknięcie.
+ *	
+ * \@param resolution_x rozdzielczość pozioma okna programu.
+ * \@param resolution_y rozdzielczość pionowa okna programu.
+ * \@param FPS ilość klatek na sekundę.
+ * \@param chessBoard macierz odwzorująca szachownicę.
+ * \@param size_x rozmiar poziomy szachownicy.
+ * \@param size_y rozmiar pionowy szachownicy.
+ * \@param position_x koordynat poziomy początkowej pozycji skoczka.
+ * \@param position_y koordynat pionowy początkowej pozycji skoczka.
+ * \@param impossible sprawdza czy można rozwiązać problem.
+ * \@param timer podwójny wskaźnik na timer biblioteki allegro.
+ * \@param display podwójny wskaźnik na display biblioteki allegro.
+ * \@param queue podwójny wskaźnik na kolejkę biblioteki allegro.
+ * \@param bg podwójny wskaźnik na tło biblioteki allegro.
+ * \@param font podwójny wskaźnik na font biblioteki allegro.
+ * \@param chessboard podwójny wskaźnik na macierz.
+ * 
 */
 void draw_solution(ALLEGRO_TIMER** timer, ALLEGRO_DISPLAY** display,
 	ALLEGRO_EVENT_QUEUE** queue, ALLEGRO_FONT** font, ALLEGRO_BITMAP** bg,
