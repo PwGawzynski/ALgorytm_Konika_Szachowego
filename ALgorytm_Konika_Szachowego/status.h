@@ -12,6 +12,7 @@
  * \param[in] description opis.
  * \param[in] test wartość do sprawdzenia.
  * \return Zwraca true jeżeli dana wartość działa poprawnie.
+ * 
  */
 
 bool must_init(bool test,const char* description) {

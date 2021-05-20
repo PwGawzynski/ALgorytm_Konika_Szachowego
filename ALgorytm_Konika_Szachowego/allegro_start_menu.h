@@ -4,7 +4,7 @@
  * \param[in] mouse_x poziomy koordynat kursora.
  * \param[in] mouse_y pionowy koordynat kursora.
  * \param[in] values tablica zawieraj¹ca koordynaty pocz¹tkowe skoczka oraz wymiary szachownicy.
- * \param[in] size_x rozmiar poziomy szachownicy.
+ * \param[in] size_x rozmiar poziomy szachownicy. 
  * \param[in] size_y rozmiar pionowy szachownicy.
  * \param[in] position_x koordynat poziomy pocz¹tkowej pozycji skoczka.
  * \param[in] position_y koordynat pionowy pocz¹tkowej pozycji skoczka.

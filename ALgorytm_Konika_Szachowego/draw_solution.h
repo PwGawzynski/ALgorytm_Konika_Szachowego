@@ -57,6 +57,7 @@ void draw_solution(ALLEGRO_TIMER** timer, ALLEGRO_DISPLAY** display,
 				else {
 					if (iter_j % 2 == 0)
 					{
+						
 						al_draw_filled_rectangle(i, j, i + one_ractangle_x, j + one_ractangle_y,
 							al_map_rgb(106, 75, 53));
 						al_draw_text(*font, al_map_rgb(255, 255, 255),

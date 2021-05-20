@@ -9,7 +9,7 @@
  * \brief Funcja inicjalizuje niezbêdne wskaŸniki i elementy biblioteki allegro.
  *
  * \param[in] resolution_x rozdzielczoœæ pozioma okna programu.
- * \param[in] resolution_y rozdzielczoœæ pionowa okna programu.
+ * \param[in] resolution_y rozdzielczoœæ pionowa okna programu. 
  * \param[in] FPS iloœæ klatek na sekundê.
  */
 void allegro_game_init(ALLEGRO_TIMER** timer, ALLEGRO_DISPLAY** display, ALLEGRO_EVENT_QUEUE** queue, ALLEGRO_FONT** font, 

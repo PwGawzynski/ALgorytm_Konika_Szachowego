@@ -28,7 +28,7 @@ int main() {
 		printf("\n\n\n");
 	}
 	else impossible = 1;
-
+	 
 	draw_solution(&timer, &display, &queue, &font, &background,
 		&resolution_x, &resolution_y, &FPS, &size_x, &size_y, &position_x, &position_y, chessBoard, impossible);
 

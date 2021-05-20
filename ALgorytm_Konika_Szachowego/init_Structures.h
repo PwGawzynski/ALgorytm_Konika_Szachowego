@@ -49,7 +49,7 @@ p_chessboard alocate_for_one(int* size_x) {
  * \brief Funkcja tworzy macierz szachownicy.
  *
  * \param[in] size_x wymiar poziomy szachownicy.
- * \param[in] size_y wymiar pionowy szachownicy.
+ * \param[in] size_y wymiar pionowy szachownicy. 
  * \return Zwraca adres zaalokowanej pamiêci dla macierzy.
  */
 pp_chessboard init_chessBoard(int* size_x, int* size_y) {

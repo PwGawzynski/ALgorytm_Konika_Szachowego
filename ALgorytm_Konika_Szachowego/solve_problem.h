@@ -53,7 +53,7 @@ bool solve_knight_problem(pp_chessboard chessBoard, int* position_x, int* positi
 	for (i = 0; i < 8; i++)
 	{
 		step[i][0] = 0; 
-		step[i][1] = (*position_x) + moves[i][0]; 
+		step[i][1] = (*position_x) + moves[i][0];  
 		step[i][2] = (*position_y) + moves[i][1];
 		if (check(step[i][1], step[i][2], chessBoard, (size_x), (size_y)))
 		{ 
